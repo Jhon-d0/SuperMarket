@@ -17,17 +17,11 @@ export default function Cadastro() {
     }
 
     try {
-      await api.post("/cadastro", {
-        nome,
-        email,
-        senha,
-      });
+      await api.post("/cadastro", { nome, email, senha });
 
       setMensagem("Usuário cadastrado com sucesso!");
 
-      setTimeout(() => {
-        navigate("/");
-      }, 1500); // espera antes de voltar pro login
+      setTimeout(() => navigate("/"), 1500);
     } catch {
       setMensagem("Erro ao cadastrar usuário");
     }
@@ -36,7 +30,8 @@ export default function Cadastro() {
   return (
     <div className="cadastro-container">
       <div className="cadastro-card">
-        <h2>Cadastro de Usuário</h2>
+        <h1>StockMaster</h1>
+        <h2>Crie sua conta</h2>
 
         <input
           type="text"
@@ -60,6 +55,10 @@ export default function Cadastro() {
         />
 
         <button onClick={registrar}>Cadastrar</button>
+
+        <p className="voltar-login" onClick={() => navigate("/")}>
+          Já tem conta? <span>Faça login</span>
+        </p>
 
         {mensagem && <p className="cadastro-msg">{mensagem}</p>}
       </div>

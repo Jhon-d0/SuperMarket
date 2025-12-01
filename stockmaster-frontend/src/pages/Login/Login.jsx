@@ -2,6 +2,7 @@ import { useState } from "react";
 import api from "../../services/api";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -15,22 +16,36 @@ export default function Login() {
         senha,
       });
 
-      // salva o token
       localStorage.setItem("token", response.data);
 
-      alert("Login realizado com sucesso!");
-
-      // redireciona para /produtos
-      navigate("/produtos");
+      // ALERTA MODERNO
+      Swal.fire({
+        title: "Login bem-sucedido!",
+        text: "Bem-vindo ao StockMaster!",
+        icon: "success",
+        confirmButtonColor: "#ff6f00",
+        background: "#fff8e1",
+      }).then(() => {
+        navigate("/produtos");
+      });
+      
     } catch {
-      alert("Credenciais inválidas!");
+      Swal.fire({
+        title: "Erro!",
+        text: "Credenciais inválidas!",
+        icon: "error",
+        confirmButtonColor: "#d32f2f",
+      });
     }
   }
 
   return (
     <div className="login-container">
       <div className="login-card">
-        <h1>StockMaster</h1>
+        
+        <h1 className="logo">
+          Stock<span>Master</span>
+        </h1>
 
         <input
           type="text"
@@ -47,6 +62,11 @@ export default function Login() {
         />
 
         <button onClick={handleLogin}>Entrar</button>
+
+        <p className="signup-text">
+          Não tem conta?{" "}
+          <span onClick={() => navigate("/cadastro")}>Cadastre-se</span>
+        </p>
       </div>
     </div>
   );

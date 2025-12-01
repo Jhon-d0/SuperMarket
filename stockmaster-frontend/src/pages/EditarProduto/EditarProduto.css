@@ -1,43 +1,78 @@
 .editar-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff7e6;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: #f5f6fa;
+  padding: 20px;
 }
 
 .editar-card {
-  background: white;
+  background: #ffffff;
   padding: 28px;
   width: 380px;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  border-radius: 14px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.18);
+  text-align: center;
+  border-top: 6px solid #ff8800;
+}
+
+.editar-card h2 {
+  margin-bottom: 20px;
+  color: #d46b08;
+  font-weight: bold;
+  font-size: 22px;
 }
 
 .editar-card input {
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #bbb;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #ffc671;
+  background: #fff8ef;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  font-size: 15px;
+}
+
+.editar-card input:focus {
+  border-color: #ffa200;
+  background: #fff2db;
+  box-shadow: 0 0 5px rgba(255, 174, 0, 0.5);
 }
 
 .editar-card button {
-  padding: 12px;
+  width: 100%;
+  padding: 14px;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  background: #3498db;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ffa200, #ff7a00);
   color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.editar-card button:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
 }
 
 .editar-card .voltar {
-  background: #666;
+  background: #cc0000 !important;
+  margin-top: 8px;
+}
+
+.editar-card .voltar:hover {
+  filter: brightness(1.2);
 }
 
 .mensagem {
+  margin-top: 15px;
   font-weight: bold;
-  text-align: center;
+  font-size: 15px;
 }
