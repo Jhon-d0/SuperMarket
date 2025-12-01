@@ -1,0 +1,15 @@
+@import './styles/variables.css';
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  font-family: Arial, sans-serif;
+  color: var(--text);
+}
