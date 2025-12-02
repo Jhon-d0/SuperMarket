@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login/Login";
-import Produtos from "./pages/Paginainicial/Paginainicial";
+import Produtos from "./pages/PaginaInicial/PaginaInicial";
 import Cadastro from "./pages/Cadastro/Cadastro";
 import CadastroProduto from "./pages/CadastraProdutos/CadastrarProdutos";
 import EditarProduto from "./pages/EditarProduto/EditarProduto";

@@ -1,7 +1,8 @@
 import axios from "axios";
+import { meta } from "eslint-plugin-react-hooks";
 
 const api = axios.create({
-  baseURL: process.env.HOST_API, // sua API backend
+  baseURL: meta.env.HOST_API, // sua API backend
   timeout: 50000 // tempo limite de 10 segundos
 });
 
